@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academy Platform| Sellami Siham</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #080456;
+            --secondary: #0d0670;
+            --dark: #2f2e41;
+            --light: #f8f9fa;
+            --gold: #cfbf67;
+            --green: #214531;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+       
+        header {
+            background:linear-gradient(to right, rgb(46, 74, 98) , rgb(55, 56, 86));  
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.586);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: wheat;
+            text-decoration: none;
+        }
+        .btn{
+             font-size: 1.8rem;
+            font-weight: 700;
+            color: wheat;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: wheat;
+        }
+
+        
+     
+        .project-hero {
+            padding: 12rem 5% 5rem;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                    url('https://i.postimg.cc/zv9r9f3K/project.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+        }
+        
+        .project-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .meta-item {
+            background: rgba(255,255,255,0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+        }
+        
+        /* Project Content */
+        .project-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 5%;
+            background: white;
+        }
+        
+        .project-overview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        
+        .overview-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .overview-text p {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .tech-stack {
+            margin-top: 2rem;
+        }
+        
+        .tech-stack h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        
+        .tech-tag {
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+        
+        .project-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: auto;
+            height: 100%;
+            display: block;
+        }
+        
+        /* Features Section */
+        .features-section {
+            margin: 5rem 0;
+        }
+        
+        .features-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--green);
+        }
+        
+        .feature-card i {
+            font-size: 2rem;
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            margin: 5rem 0;
+        }
+        
+        .gallery-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .project-overview {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .project-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .project-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+        </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Sellami <span>Siham</span></a>
+            <a href="index.html#portfolio" class="btn">Back to Portfolio</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="project-hero">
+        <h1>Academy Platform</h1>
+        <p>A comprehensive educational management system for course scheduling, student tracking, and promotion management</p>
+        <div class="project-meta">
+            <div class="meta-item">
+                <i class="fas fa-calendar-alt"></i> 2023
+            </div>
+            <div class="meta-item">
+                <i class="fas fa-tags"></i> Education Technology
+            </div>
+            <div class="meta-item">
+                <i class="fas fa-link"></i> <a href="https://siamsell.github.io/Academy-Platform/" target="_blank" style="color:white;">siamsell.github.io/Academy-Platform</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <section class="project-content">
+        <div class="project-overview">
+            <div class="overview-text">
+                <h2>Project Overview</h2>
+                <p>The Academy Platform was developed to streamline educational institution management, providing tools for course administration, student enrollment, and academic progress tracking.</p>
+                <p>This responsive web application centralizes all academic operations, from class scheduling to promotion management, reducing administrative workload by 40% according to user feedback.</p>
+                
+                <div class="tech-stack">
+                    <h3>Technologies Used</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML5/CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">jQuery</span>
+                        <span class="tech-tag">FullCalendar</span>
+                        <span class="tech-tag">Chart.js</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-image">
+                
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Academy Platform Dashboard">
+            </div>
+        </div>
+        
+        <!-- Features Section -->
+        <div class="features-section">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-calendar"></i>
+                    <h3>Course Scheduling</h3>
+                    <p>Interactive calendar for class scheduling with drag-and-drop functionality and conflict detection</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Student Management</h3>
+                    <p>Complete student profiles with attendance tracking and performance analytics</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Teacher Portal</h3>
+                    <p>Dedicated interface for instructors to manage classes and submit grades</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Promotion System</h3>
+                    <p>Automated promotion criteria with customizable thresholds and reporting</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-bell"></i>
+                    <h3>Notification Center</h3>
+                    <p>Real-time alerts for schedule changes, deadlines, and important announcements</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-file-invoice"></i>
+                    <h3>Reporting Dashboard</h3>
+                    <p>Generate institutional reports with visual analytics on student performance</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Gallery Section -->
+        <div class="gallery-section">
+            <h2>Platform Screenshots</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/T3xV6qzN/Capture-d-cran-2025-06-02-163732.jpg" alt="Dashboard View">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/Z5LrKvZb/Capture-d-cran-2025-06-02-163809.jpg" alt="Course Management">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/yYcmtrbS/Capture-d-cran-2025-066-02-163905.jpg" alt="Student Profile">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/HW4WNwtk/Capture-d-cran-2025-06-02-164414.jpg" alt="Analytics Dashboard">
+                </div>
+                 <div class="gallery-item">
+                    <img src="https://i.postimg.cc/X7jN6r2c/Capture-d-cran-2025-06-02-164445.jpg" alt="Analytics Dashboard">
+                </div>
+                 <div class="gallery-item">
+                    <img src="https://i.postimg.cc/9FLmmcK3/Capture-d-cran-2025-06-02-164510.jpg" alt="Analytics Dashboard">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Technical Implementation -->
+        <div class="implementation-section" style="margin: 4rem 0; padding: 3rem; background: #f9f9f9; border-radius: 12px;">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Technical Implementation</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: var(--education-blue);">Frontend Architecture</h3>
+                    <ul style="list-style-type: none;">
+                        <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--accent); margin-top: 3px;"></i>
+                            <span>Responsive design with Bootstrap grid system</span>
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--accent); margin-top: 3px;"></i>
+                            <span>Interactive elements with jQuery</span>
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--accent); margin-top: 3px;"></i>
+                            <span>FullCalendar integration for scheduling</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: var(--education-blue);">Data Management</h3>
+                    <ul style="list-style-type: none;">
+                        <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--accent); margin-top: 3px;"></i>
+                            <span>Local storage for user preferences</span>
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--accent); margin-top: 3px;"></i>
+                            <span>Chart.js for data visualization</span>
+                        </li>
+                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
