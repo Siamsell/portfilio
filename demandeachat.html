@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Système de Demandes d'Achat | Sellami Siham</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #080456;
+            --secondary: #0d0670;
+            --dark: #2f2e41;
+            --light: #f8f9fa;
+            --gold: #cfbf67;
+            --green: #214531;
+            --red: #d32f2f;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background:linear-gradient(to right, rgb(46, 74, 98) , rgb(55, 56, 86));  
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.586);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: wheat;
+            text-decoration: none;
+        }
+        
+        .btn {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: wheat;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: wheat;
+        }
+        
+        .project-hero {
+            padding: 12rem 5% 5rem;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                    url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Purchase Request System" class="portfolio-img');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+        }
+        
+        .project-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .meta-item {
+            background: rgba(255,255,255,0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+        }
+        
+        /* Project Content */
+        .project-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 5%;
+            background: white;
+        }
+        
+        .project-overview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        
+        .overview-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .overview-text p {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .tech-stack {
+            margin-top: 2rem;
+        }
+        
+        .tech-stack h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        
+        .tech-tag {
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+        
+        .project-image {
+            border-radius: 12px;
+               width: 600px;
+            height:400px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .project-image img {
+            width: 600px;
+            height:400px;
+            display: block;
+        }
+        
+        /* Features Section */
+        .features-section {
+            margin: 5rem 0;
+        }
+        
+        .features-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+        }
+        
+        .feature-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            margin: 5rem 0;
+        }
+        
+        .gallery-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .workflow {
+            margin: 4rem 0;
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 12px;
+        }
+        
+        .workflow h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .workflow-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .project-overview {
+                grid-template-columns: 1fr;
+            }
+            
+            .workflow-steps {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .project-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .project-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Sellami <span>Siham</span></a>
+            <a href="index.html#portfolio" class="btn">Retour au Portfolio</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="project-hero">
+        <h1>Système de Demandes d'Achat</h1>
+        <p>Une plateforme complète pour gérer les demandes d'achat avec authentification sécurisée via Gmail et workflow d'approbation</p>
+        <div class="project-meta">
+            <div class="meta-item">
+                <i class="fas fa-calendar-alt"></i> 2023
+            </div>
+            <div class="meta-item">
+                <i class="fas fa-tags"></i> Gestion d'achats
+            </div>
+           
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <section class="project-content">
+        <div class="project-overview">
+            <div class="overview-text">
+                <h2>Aperçu du Projet</h2>
+                <p>Le système de demandes d'achat a été développé pour rationaliser le processus d'approvisionnement dans les entreprises, offrant un workflow complet de soumission, validation et suivi des demandes d'achat.</p>
+                <p>Cette application web sécurisée intègre une authentification via Gmail avec vérification d'identité, garantissant que seuls les utilisateurs autorisés peuvent soumettre ou approuver des demandes.</p>
+                
+                <div class="tech-stack">
+                    <h3>Technologies Utilisées</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML5/CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">API Google OAuth</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-image">
+                <img src="https://i.postimg.cc/j5fqYrzg/Capture-d-cran-2025-06-12-230423.jpg" alt="Tableau de bord des demandes d'achat">
+            </div>
+        </div>
+        
+        <!-- Workflow Section -->
+        <div class="workflow">
+            <h2>Workflow des Demandes d'Achat</h2>
+            <div class="workflow-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Soumission</h3>
+                    <p>L'utilisateur connecté via Gmail soumet une demande avec tous les détails nécessaires</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Validation</h3>
+                    <p>La demande est automatiquement routée vers le responsable concerné pour approbation</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Approbation</h3>
+                    <p>Le manager approuve ou rejette la demande avec commentaires</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Exécution</h3>
+                    <p>La demande approuvée est transmise au service achats pour traitement</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Suivi</h3>
+                    <p>Statut en temps réel et notifications pour toutes les parties prenantes</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features Section -->
+        <div class="features-section">
+            <h2>Fonctionnalités Clés</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <h3>Connexion Sécurisée</h3>
+                    <p>Authentification via Gmail avec vérification d'identité et gestion des rôles</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3>Formulaire Intelligent</h3>
+                    <p>Saisie guidée des demandes avec suggestions et validation en temps réel</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Workflow Configurable</h3>
+                    <p>Chaîne d'approbation personnalisable selon la hiérarchie et les montants</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-bell"></i>
+                    <h3>Notifications</h3>
+                    <p>Alertes par email et dans l'application pour les actions requises</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Reporting</h3>
+                    <p>Tableaux de bord analytiques pour le suivi des dépenses</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-file-export"></i>
+                    <h3>Export des Données</h3>
+                    <p>Génération de rapports PDF/Excel pour intégration avec les systèmes comptables</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Gallery Section -->
+        <div class="gallery-section">
+            <h2>Captures d'Écran</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/JzTzbxrq/Capture-d-cran-2025-06-12-230253.jpg" alt="Tableau de bord">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/7Y9Hk92k/Capture-d-cran-2025-06-12-230635.jpg" alt="Formulaire de demande">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/fbpWPb0S/Capture-d-cran-2025-06-12-230457.jpg" alt="Workflow d'approbation">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/PJkXtFyt/Capture-d-cran-2025-06-12-230600.jpg" alt="Reporting analytique">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/m2BLJJhj/Capture-d-cran-2025-06-12-230758.jpg" alt="Reporting analytique">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/HLVs3MjC/Capture-d-cran-2025-06-12-230530.jpg" alt="Reporting analytique">
+                </div>
+                  <div class="gallery-item">
+                    <img src="https://i.postimg.cc/Kcnc9xc4/Capture-d-cran-2025-06-12-230935.jpg" alt="Reporting analytique">
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        <!-- Technical Implementation -->
+        <div class="implementation-section" style="margin: 4rem 0; padding: 3rem; background: #f9f9f9; border-radius: 12px;">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Implémentation Technique</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Sécurité</h3>
+                    <ul style="list-style-type: none;">
+                        <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 3px;"></i>
+                            <span>Authentification OAuth 2.0 avec Google</span>
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 3px;"></i>
+                            <span>Vérification des domaines email autorisés</span>
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 3px;"></i>
+                            <span>Gestion fine des permissions (RBAC)</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Backend</h3>
+                    <ul style="list-style-type: none;">
+                        <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 3px;"></i>
+                            <span>API RESTful avec Node.js et Express</span>
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 3px;"></i>
+                            <span>Base de données MongoDB pour la flexibilité</span>
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 3px;"></i>
+                            <span>Service de notifications avec Firebase Cloud Messaging</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Frontend</h3>
+                    <ul style="list-style-type: none;">
+                        <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 3px;"></i>
+                            <span>Interface React.js avec Material-UI</span>
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 3px;"></i>
+                            <span>Formulaires dynamiques avec Formik</span>
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 3px;"></i>
+                            <span>Visualisation des données avec Chart.js</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
